@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# 🎓 Courses API – Full Stack Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A colorful and intuitive full-stack Course Management Portal built using **Spring Boot**, **ReactJS**, and **Docker**, designed as part of the IIT Bombay Internship Assignment.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📦 Tech Stack
 
-### `npm start`
+| Layer       | Technology           |
+|-------------|----------------------|
+| Frontend    | ReactJS, Bootstrap   |
+| Backend     | Spring Boot, Java 21 |
+| Database    | H2 (In-Memory DB)    |
+| DevOps      | Docker, GitHub Actions |
+| Hosting     | Docker Hub           |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 Features
 
-### `npm test`
+- Create, list, and manage **Courses**.
+- Manage **Course Instances** (semester-wise offerings).
+- Add **prerequisites** for courses with validation.
+- Clean and responsive UI.
+- RESTful APIs.
+- **Dockerized full-stack** for easy deployment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔧 Backend (Spring Boot)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Navigate to backend folder
+cd courses-api
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Build the project
+mvn clean install
 
-### `npm run eject`
+# Run the app
+mvn spring-boot:run
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Visit: http://localhost:8080
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sample endpoint: GET /courses
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🎨 Frontend (ReactJS)
+bash
+Copy
+Edit
+# Navigate to frontend folder
+cd course-frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Run the development server
+npm start
+Visit: http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🐳 Docker Setup
+🏗️ Build and Run Locally
+bash
+Copy
+Edit
+docker build -t hemaharshith/courses-api .
+docker run -p 8080:8080 hemaharshith/courses-api
+📤 DockerHub Deployment
+Automatically builds and pushes to DockerHub via GitHub Actions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🛠️ Project Structure
+css
+Copy
+Edit
+courses-api/
+├── src/
+│   ├── main/java/com/intern/courses/
+│   └── resources/
+├── course-frontend/
+│   ├── src/
+│   └── public/
+├── Dockerfile
+├── docker.yml (GitHub Actions)
+├── pom.xml
+└── README.md
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📌 GitHub Repo
+🔗 https://github.com/Harshith-45/courses-api
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👤 Author
+Harshith Reddy
+GitHub | DockerHub
