@@ -1,30 +1,74 @@
 package com.intern.courses.model;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class CourseInstance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Link to the main course (e.g., CS101)
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    // When the course is offered (e.g., Spring 2025)
-    private String semester; // e.g., "Spring" or "Fall"
-    private int year;
+    private String semester;
 
-    // Optional: Who teaches the course in this instance
+    @Column(name = "academic_year")
+    private int academicYear;
+
     private String instructor;
 
-    // Additional attributes can be added (room, schedule, capacity, etc.)
+    public CourseInstance() {}
+
+    public CourseInstance(Long id, Course course, String semester, int academicYear, String instructor) {
+        this.id = id;
+        this.course = course;
+        this.semester = semester;
+        this.academicYear = academicYear;
+        this.instructor = instructor;
+    }
+
+    // Getters
+    public Long getId() {
+        return id;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public int getAcademicYear() {
+        return academicYear;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    // Setters
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public void setAcademicYear(int academicYear) {
+        this.academicYear = academicYear;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
 }
